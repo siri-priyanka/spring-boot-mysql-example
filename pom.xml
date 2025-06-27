@@ -39,9 +39,9 @@
 
         <!-- MySQL Connector with explicit version -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.32</version>
+             <groupId>com.mysql</groupId>
+             <artifactId>mysql-connector-j</artifactId>
+             <version>8.0.32</version> <!-- or 8.1.0+ if you want the latest -->
         </dependency>
 
         <!-- Jakarta for JPA and Validation -->
