@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,7 +11,7 @@
     <packaging>war</packaging>
 
     <name>spring-boot-mysql</name>
-    <description>Spring Boot MySQL Example</description>
+    <description>Spring Boot with MySQL Example</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -27,45 +26,34 @@
 
     <dependencies>
 
-        <!-- Web Starter -->
+        <!-- Spring Boot Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- JPA Starter -->
+        <!-- Spring Data JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- Jakarta Persistence API -->
-        <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-
-        <!-- Jakarta Validation API -->
-        <dependency>
-            <groupId>jakarta.validation</groupId>
-            <artifactId>jakarta.validation-api</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-
-        <!-- MySQL Connector -->
+        <!-- MySQL Connector (version managed by Spring Boot BOM) -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.30</version>
         </dependency>
 
-        <!-- JUnit 4 for Tests -->
+        <!-- Jakarta Persistence -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+        </dependency>
+
+        <!-- Jakarta Validation -->
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
         </dependency>
 
         <!-- Spring Boot Test -->
@@ -75,21 +63,27 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- JUnit -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
-
-            <!-- Spring Boot WAR plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludeDevtools>false</excludeDevtools>
-                </configuration>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
